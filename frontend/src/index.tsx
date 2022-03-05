@@ -4,12 +4,21 @@ import ReactDOM from 'react-dom';
 import { App } from './App';
 import './index.css';
 import { getProvider } from './utils/provider';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { Landing } from "./screens/Landing";
 
 ReactDOM.render(
   <React.StrictMode>
     <Web3ReactProvider getLibrary={getProvider}>
-      <App />
+    <BrowserRouter basename="/">
+    <Routes>
+      <Route path="/" element={<App />}/>
+      <Route path="/landing"  element={<Landing />} />
+    </Routes>
+    </BrowserRouter>
     </Web3ReactProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+
