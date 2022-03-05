@@ -96,7 +96,7 @@ function Activate(): ReactElement {
       }}
       onClick={handleActivate}
     >
-      Connect
+      Connect Wallet
     </StyledActivateButton>
   );
 }
@@ -136,7 +136,7 @@ export function ActivateDeactivate(): ReactElement {
   return (
     <StyledActivateDeactivateDiv>
       <Activate />
-      <Deactivate />
+      {/* <Deactivate /> */}
     </StyledActivateDeactivateDiv>
   );
 }

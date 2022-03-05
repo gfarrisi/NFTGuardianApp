@@ -4,7 +4,11 @@ import  * as ReactDOM from 'react-dom';
 // import "assets/styles/tailwind.css";
 import { Link } from 'react-router-dom';
 import Navbar from './components/NavBars/Navbar';
-
+import { Greeter } from './components/Greeter';
+import { SectionDivider } from './components/SectionDivider';
+import { SignMessage } from './components/SignMessage';
+import { WalletStatus } from './components/WalletStatus';
+import Footer from './components/Footers/Footer';
 
 export function App(): ReactElement {
   return (
@@ -91,7 +95,11 @@ export function App(): ReactElement {
               </div>
             </div>
           </section>
-            {/* <Footer /> */}
+            <Footer />
+
+          <SectionDivider />
+          <WalletStatus />
+          <SectionDivider />
         </main>
       
       </>
