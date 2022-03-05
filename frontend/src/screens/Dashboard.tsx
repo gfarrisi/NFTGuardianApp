@@ -12,10 +12,10 @@ const StyledAppDiv = styled.div`
   grid-gap: 20px;
 `;
 
-export function Landing(): ReactElement {
+export function Dashboard(): ReactElement {
   return (
     <div>
-    <h1>Landing</h1>
+    <h1>Dashboard</h1>
     <nav>
       <Link to="/">Home</Link> |{" "}
       <Link to="landing">Landing</Link>

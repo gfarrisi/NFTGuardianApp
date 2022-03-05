@@ -3,16 +3,97 @@ import  * as ReactDOM from 'react-dom';
 // import "@fortawesome/fontawesome-free/css/all.min.css";
 // import "assets/styles/tailwind.css";
 import { Link } from 'react-router-dom';
+import Navbar from './components/NavBars/Navbar';
 
 
 export function App(): ReactElement {
   return (
-    <div>
-    <h1>Home</h1>
-    <nav>
-      <Link to="/">Home</Link> |{" "}
-      <Link to="landing">Landing</Link>
-    </nav>
-  </div>
+      <>
+        <Navbar />
+        <main>
+          <div className="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75">
+            {/* <div
+              className="absolute top-0 w-full h-full bg-center bg-cover"
+              style={{
+                backgroundColor: '#D8E6ED'
+                // backgroundImage:
+                  // "url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80')",
+              }}
+            >
+              <span
+                id="blackOverlay"
+                className="w-full h-full absolute opacity-75 bg-black"
+              ></span>
+            </div> */}
+            <div className="container relative mx-auto">
+              <div className="items-center flex flex-wrap">
+                <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
+                  <div className="pr-12">
+                    <h1 className="text-black font-semibold text-5xl">
+                    Secure your NFTs in the NFT Guardian Vault
+                    </h1>
+                    <p className="mt-4 text-lg text-black-200">
+                    A custodial vault that holds onto and insure your NFT assets. Start with Ethereum L1 and eventually support multiple EVM chains - Polygon 
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <section className="pb-20  -mt-24">
+            <div className="container mx-auto px-4">
+              <div className="flex flex-wrap">
+                <div className="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
+                  <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+                    <div className="px-4 py-5 flex-auto">
+                      <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
+                        <i className="fas fa-award"></i>
+                      </div>
+                      <h6 className="text-xl font-semibold">Guard NFTs</h6>
+                      <p className="mt-2 mb-4 text-blueGray-500">
+                        Divide details about your product or agency work into
+                        parts. A paragraph describing a feature will be enough.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+  
+                <div className="w-full md:w-4/12 px-4 text-center">
+                  <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+                    <div className="px-4 py-5 flex-auto">
+                      <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-sky-400">
+                        <i className="fas fa-retweet"></i>
+                      </div>
+                      <h6 className="text-xl font-semibold">Manage/ List on Marketplace</h6>
+                      <p className="mt-2 mb-4 text-blueGray-500">
+                        Keep you user engaged by providing meaningful information.
+                        Remember that by this time, the user is curious.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+  
+                <div className="pt-6 w-full md:w-4/12 px-4 text-center">
+                  <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+                    <div className="px-4 py-5 flex-auto">
+                      <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-emerald-400">
+                        <i className="fas fa-fingerprint"></i>
+                      </div>
+                      <h6 className="text-xl font-semibold">Withdraw When Ready</h6>
+                      <p className="mt-2 mb-4 text-slate-500">
+                        Write a few lines about each one. A paragraph describing a
+                        feature will be enough. Keep you user engaged!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+            {/* <Footer /> */}
+        </main>
+      
+      </>
   );
 }
