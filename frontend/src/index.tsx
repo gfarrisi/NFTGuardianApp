@@ -7,7 +7,7 @@ import { getProvider } from './utils/provider';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { Dashboard } from "./screens/Dashboard";
 
-// import '@fortawesome/fontawesome-free/css/all.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import './assets/styles/tailwind.css';
 
 ReactDOM.render(

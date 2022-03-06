@@ -68,9 +68,12 @@ function Activate(): ReactElement {
   const [activating, setActivating] = useState<boolean>(false);
 
   function handleActivate(event: MouseEvent<HTMLButtonElement>): void {
+
     event.preventDefault();
 
     async function _activate(activate: ActivateFunction): Promise<void> {
+      console.log(activate(injected),{context})
+
       setActivating(true);
       await activate(injected);
       setActivating(false);
@@ -88,7 +91,12 @@ function Activate(): ReactElement {
   useInactiveListener(!eagerConnectionSuccessful);
 
   return (
-    <StyledActivateButton
+
+
+<>
+{!active ? (
+  <>
+      <StyledActivateButton
       disabled={active}
       style={{
         cursor: active ? 'not-allowed' : 'pointer',
@@ -96,8 +104,14 @@ function Activate(): ReactElement {
       }}
       onClick={handleActivate}
     >
-      Connect Wallet
-    </StyledActivateButton>
+      <i className="fas fa-plus"/> Connect Wallet
+    </StyledActivateButton></>
+): (
+  <></>
+)
+
+}
+</>
   );
 }
 
@@ -112,7 +126,11 @@ function Deactivate(): ReactElement {
   }
 
   return (
-    <StyledDeactivateButton
+    <>
+    {!active ? (
+      <></>
+    ): (
+      <StyledDeactivateButton
       disabled={!active}
       style={{
         cursor: active ? 'pointer' : 'not-allowed',
@@ -122,6 +140,11 @@ function Deactivate(): ReactElement {
     >
       Disconnect
     </StyledDeactivateButton>
+    )
+
+    }
+    </>
+    
   );
 }
 
@@ -129,14 +152,18 @@ export function ActivateDeactivate(): ReactElement {
   const context = useWeb3React<Provider>();
   const { error } = context;
 
+  // const [connected, setConnected] = useState(false)
+
   if (!!error) {
     window.alert(getErrorMessage(error));
   }
 
+  console.log({context})
+
   return (
     <StyledActivateDeactivateDiv>
       <Activate />
-      {/* <Deactivate /> */}
+      <Deactivate />
     </StyledActivateDeactivateDiv>
   );
 }
