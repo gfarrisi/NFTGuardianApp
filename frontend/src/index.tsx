@@ -9,16 +9,19 @@ import { Dashboard } from "./screens/Dashboard";
 
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './assets/styles/tailwind.css';
+import { Provider } from 'wagmi';
 
 ReactDOM.render(
   <React.StrictMode>
     <Web3ReactProvider getLibrary={getProvider}>
+    <Provider>
     <BrowserRouter basename="/">
     <Routes>
       <Route path="/" element={<App />}/>
       <Route path="/dashboard"  element={<Dashboard />} />
     </Routes>
     </BrowserRouter>
+    </Provider>
     </Web3ReactProvider>
   </React.StrictMode>,
   document.getElementById('root')

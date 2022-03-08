@@ -1,10 +1,11 @@
-import { ReactElement } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Footer from '../components/Footers/Footer';
 import Navbar from '../components/NavBars/Navbar';
 import { SectionDivider } from '../components/SectionDivider';
 import { WalletStatus } from '../components/WalletStatus';
+
 // import { ActivateDeactivate } from './components/ActivateDeactivate';
 // import { Greeter } from './components/Greeter';
 // import { SectionDivider } from './components/SectionDivider';
@@ -17,6 +18,9 @@ const StyledAppDiv = styled.div`
 `;
 
 export function Landing(): ReactElement {
+
+  
+
   return (
     <>
     <Navbar />
